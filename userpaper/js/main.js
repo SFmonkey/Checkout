@@ -91,7 +91,6 @@ window.onload=function(){
 	var li_num=30;
 	var oreg_day_li=get.byId('reg_day').getElementsByTagName('li');
 	var osafe_out=get.byId('safe_out');
-	/*回车*/
    
 	$.ajax
 		({
@@ -194,57 +193,59 @@ window.onload=function(){
 		
 		//我这个是在加载页面的时候上传大家的留言
 	    
-		for(var i=0;i<li_num;i++)
-		{
+		
 			$.ajax
 			({
 					type:'POST',
 					url:'messageout.php',
 					
-					data:{
-					   oi:i ,
-				},
 				
 				success:function(rs)
 				{
+
 	                var ors=eval('(' + rs + ')');
 					
 					for(var num_i in ors)
 					{
-					    
-						if(num_i=='0')
-						{
-							var ocontents=ors[num_i];
-						}
-						if(num_i=='1')
-						{
-							var oname=ors[num_i];
-						}
-						if(num_i=='2')
-						{
-							var omonth=ors[num_i];
-						}
-						if(num_i=='3')
-						{
-							var odate=ors[num_i];
-						}if(num_i=='4')
-						{
-							var ohours=ors[num_i];
-						}
-						if(num_i=='5')
-						{
-							var ominutes=ors[num_i];
+                        
+						for(var content_i in ors[num_i])
+					    {
+                            
+							if(content_i=='0')
+							{
+								var ocontents=ors[num_i][content_i];
+							}
+							if(content_i=='1')
+							{
+								var oname=ors[num_i][content_i];
+							}
+							if(content_i=='2')
+							{
+								var omonth=ors[num_i][content_i];
+							}
+							if(content_i=='3')
+							{
+								var odate=ors[num_i][content_i];
+							}if(content_i=='4')
+							{
+								var ohours=ors[num_i][content_i];
+							}
+							if(content_i=='5')
+							{
+								var ominutes=ors[num_i][content_i];
 
-						}
+							}
+					    }
+					    oobb(oname,omonth,odate,ohours,ominutes,ocontents);
 					}
-					oobb(oname,omonth,odate,ohours,ominutes,ocontents);
+					
 				}
 			});
 			
 			
 		
 		
-		}
+		
     }
 				 
 				 

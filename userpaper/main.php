@@ -27,7 +27,7 @@
                             </ul>
                         </div>
                         <form class='sentmess'>
-                             <div class='a'><input type="text" id='conbox' class='f-text' /></div><!--留言输入处-->
+                             <div class='a'><input type="text" id='conbox' class='f-text' onkeydown='if(event.keyCode==13) return false;'/></div><!--留言输入处-->
                              <div class='b'><input type="button" id='sentbut' value='发送留言' /></div><!--发送按钮-->
                         </form>
            </div><!--这部分是留言板-->
