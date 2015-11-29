@@ -91,8 +91,8 @@ window.onload=function(){
 }
 	/*登录函数*/
 	function fsign(){
-		var ogetusername=xssout(get.byId('username').value);
-		var ogetpassword=xssout(get.byId('password').value);
+		var ogetusername=get.byId('username').value;
+		var ogetpassword=CryptoJS.MD5(get.byId('password').value).toString();
 		var oresult;
 		$.ajax
 		({

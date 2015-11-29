@@ -78,7 +78,7 @@ window.onload=function(){
 
 	function fsign(){
 		var ogetusername=get.byId('username').value;
-		var ogetpassword=get.byId('password').value;
+		var ogetpassword=CryptoJS.MD5(get.byId('password').value).toString();
 		var oresult;
 		obtn.style.borderBottom='none';
 		get.byId('password').style.marginBottom='14px';

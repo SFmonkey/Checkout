@@ -7,7 +7,8 @@ $password=$_POST['pas'];
 $query=mysql_query($sql);
 $rs=mysql_fetch_array($query);
 if($admin=="root"){
-	if($rs['password']==$password){
+$hmdpassword=md5($rs['password']);
+	if($hmdpassword==$password){
 	$data=1;
 	session_start();
     $_SESSION['loginuser']=$rs['username'];

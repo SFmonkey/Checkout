@@ -8,6 +8,7 @@ check();
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link type="text/css" rel="stylesheet" href="userpaper/css/cover.css" />
 <script src="jquery-2.0.0.min.js"></script>
+<script src="userpaper/js/md5.js"></script>
 <script src="userpaper/js/cover.js"></script>
 <title>登录</title>
 </head>
